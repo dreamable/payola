@@ -9,3 +9,6 @@ end
 gem 'rspec_junit_formatter'
 
 gem 'rails', git: 'https://github.com/rails/rails', branch: '5-0-stable'
+
+# NOTE: we need it for PDF receipt
+gem 'docverter'
