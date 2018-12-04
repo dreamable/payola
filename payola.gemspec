@@ -21,11 +21,12 @@ Gem::Specification.new do |s|
   s.add_dependency "stripe", ">= 2.8"
   s.add_dependency "aasm", ">= 4.0.7"
   s.add_dependency "stripe_event", ">= 2.0.0"
+  # NOTE: we need it for PDF receipt
+  s.add_dependency "docverter"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "factory_girl_rails"
   s.add_development_dependency "stripe-ruby-mock", ">= 2.3.1"
   s.add_development_dependency "sucker_punch", "~> 1.2.1"
-  s.add_development_dependency "docverter"
 end
