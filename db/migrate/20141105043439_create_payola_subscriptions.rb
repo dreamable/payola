@@ -6,7 +6,7 @@ class CreatePayolaSubscriptions < ActiveRecord::Migration[4.2]
       t.integer   :plan_id
       t.string    :owner_type
       t.integer   :owner_id
-      t.inteber   :affiliate_id
+      t.integer   :affiliate_id
 
       # basic info
       t.integer   :quantity
@@ -39,7 +39,7 @@ class CreatePayolaSubscriptions < ActiveRecord::Migration[4.2]
       t.text      :business_address
 
       # stripe related
-      t.string    :guid, limit : 191
+      t.string    :guid, limit: 191
       t.string    :stripe_customer_id
       t.string    :stripe_id
       t.string    :stripe_token
@@ -48,7 +48,7 @@ class CreatePayolaSubscriptions < ActiveRecord::Migration[4.2]
       # misc
       t.string    :coupon 
       t.integer   :setup_fee
-      t.decimal   :tax_percent, precision : 4, scale : 2
+      t.decimal   :tax_percent, precision: 4, scale: 2
       t.text      :signed_custom_fields
 
       t.timestamps
