@@ -50,5 +50,7 @@ class CreatePayolaSales < ActiveRecord::Migration[4.2]
     add_index :payola_sales, [:email]
     add_index :payola_sales, [:guid]
     add_index :payola_sales, [:stripe_customer_id]
+    add_index :payola_sales, [:stripe_id]
+    add_index :payola_sales, [:stripe_token]
   end
 end
