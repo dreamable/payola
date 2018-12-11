@@ -1,9 +1,12 @@
 Payola.configure do |config|
   ##################################################
-  # Key setting 
+  # Must config 
   config.publishable_key = "xxxx"
   config.secret_key = "xxxx"
   StripeEvent.signing_secret = "xxxx"
+  # NOTE: Must config support_email, otherwise, use support@example.com
+  # NOTE: support_mail must match smtp setting, otherwise, exmail rejects. 
+  config.support_email = "support@your_domain.com"
 
   # default USD. set if otherwise 
   # config.default_currency='usd'
@@ -42,8 +45,6 @@ Payola.configure do |config|
   # NOTE: For unknown reason, email may fail. So it's better to record these information in system as well.
   #
   # Build-in subscribe and email. 
-  # NOTE: Must config support_email, otherwise, use support@example.com
-  # NOTE: support_mail must match smtp setting, otherwise, exmail rejects. 
   # NOTE: Refund randomly break, no error on the Rails log, just no email got. 
   #   receipt:       [ 'payola.sale.finished', 'Payola::ReceiptMailer', :receipt ],
   #   refund:        [ 'charge.refunded',      'Payola::ReceiptMailer', :refund  ],
@@ -51,7 +52,6 @@ Payola.configure do |config|
   #   admin_refund:  [ 'payola.sale.refunded', 'Payola::AdminMailer',   :refund  ],
   #   admin_failure: [ 'payola.sale.failed',   'Payola::AdminMailer',   :failure ],
   #   admin_dispute: [ 'dispute.created',      'Payola::AdminMailer',   :dispute ],
-  config.support_email = "admin@netrohome.com"
   config.pdf_receipt = true
   config.send_email_for :receipt, :refund, :admin_receipt, :admin_refund, :admin_dispute, :admin_failure
 
