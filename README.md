@@ -5,6 +5,18 @@
 
 Payments with Stripe for your Rails application.
 
+## What is my changes?
+This is a fork of https://github.com/payolapayments/payola, which is not maintained by owners. It has following changes: 
+* Make PDF receipt works
+  * add the "docverter" dependency to gemspec which is to convert html to PDF
+  * Removing missing file ApplicationHelper from receipt_mailer.rb
+  * Remove @sale.guid from Receipt
+* Update the configuration template: initializer.rb
+  * Add more commonly used configuration & examples
+  * Add template for endpoint handling. 
+  * Add PDF receipt configuration by default. 
+* Combine & Clean DB migration files
+
 ## What does this do?
 
 Payola is a drop-in Rails engine that lets you sell one or more products by just including a module in your models. It includes:
