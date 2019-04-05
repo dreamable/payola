@@ -35,6 +35,7 @@ Add Payola to your Gemfile:
 
 ```ruby
 gem 'payola-payments'
+gem 'payola-payments', :git => 'https://github.com/dreamable/payola.git' # to use this branch
 ```
 
 Run the installer:
