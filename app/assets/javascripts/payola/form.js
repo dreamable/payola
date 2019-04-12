@@ -22,6 +22,7 @@ var PayolaPaymentForm = {
             PayolaPaymentForm.showError(form, response.error.message);
         } else {
             var email = form.find("[data-payola='email']").val();
+            var signed_custom_fields= form.find("[data-payola='signed_custom_fields']").val();
 
             var base_path = form.data('payola-base-path');
             var product = form.data('payola-product');
@@ -34,6 +35,7 @@ var PayolaPaymentForm = {
             data_form.append($('<input type="hidden" name="currency">').val(currency));
             data_form.append($('<input type="hidden" name="stripeToken">').val(response.id));
             data_form.append($('<input type="hidden" name="stripeEmail">').val(email));
+            data_form.append($('<input type="hidden" name="signed_custom_fields">').val(signed_custom_fields));
             data_form.append(PayolaPaymentForm.authenticityTokenInput());
 
             $.ajax({
