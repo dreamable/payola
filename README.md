@@ -7,6 +7,7 @@ Payments with Stripe for your Rails application.
 
 ## What is my changes?
 This is a fork of https://github.com/payolapayments/payola, which is not maintained by owners. It has following changes: 
+* Use the latest code, to fix the "undefined method `event_retriever=' for StripeEvent:Module" error. 
 * Make PDF receipt works
   * add the "docverter" dependency to gemspec which is to convert html to PDF
   * Removing missing file ApplicationHelper from receipt_mailer.rb
@@ -16,6 +17,7 @@ This is a fork of https://github.com/payolapayments/payola, which is not maintai
   * Add template for endpoint handling. 
   * Add PDF receipt configuration by default. 
 * Combine & Clean DB migration files
+* Make checkout form support custom_fields, similar with checkout button. 
 
 ## What does this do?
 
